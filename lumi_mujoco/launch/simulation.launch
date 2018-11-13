@@ -26,6 +26,8 @@ Created on: 11/13/18
         <param name="model" value="$(arg model)"/>
         <remap from="/lumi_mujoco/trajectory_controller/follow_joint_trajectory" to="/lumi_arm_controller/follow_joint_trajectory"/>
         <remap from="/lumi_mujoco/gripper_controller/gripper_cmd" to="/lumi_hand_controller/gripper_action"/>
+        <param name="lumi_joint4_init" value="-1.5708"/>
+        <param name="lumi_joint6_init" value="1.5708"/>
     </node>
 
     <!--Load Move Group Interface -->
