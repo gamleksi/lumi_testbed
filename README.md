@@ -24,7 +24,7 @@ roslaunch lumi_description show.launch
 
 Simulated robot with MuJoCo and MoveIt:
 ```sh
-TBD. 
+roslaunch lumi_mujoco simulation.launch
 ```
 
 Real robot:

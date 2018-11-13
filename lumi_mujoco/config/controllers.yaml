@@ -17,13 +17,13 @@ trajectory_controller:
   - lumi_joint7
 
   gains: #PID controllers for individual joints
-    lumi_joint1: {p: 1000,  d: 0, i: 0, i_clamp: 0}
+    lumi_joint1: {p: 2000,  d: 0, i: 0, i_clamp: 0}
     lumi_joint2: {p: 2000,  d: 0, i: 0, i_clamp: 0}
-    lumi_joint3: {p: 1000,  d: 0, i: 0, i_clamp: 0}
-    lumi_joint4: {p: 1000,  d: 0, i: 0, i_clamp: 0}
-    lumi_joint5: {p: 100,  d: 0, i: 0, i_clamp: 0}
-    lumi_joint6: {p: 100,  d: 0, i: 0, i_clamp: 0}
-    lumi_joint7: {p: 100,  d: 0, i: 0, i_clamp: 0}
+    lumi_joint3: {p: 2000,  d: 0, i: 0, i_clamp: 0}
+    lumi_joint4: {p: 2000,  d: 0, i: 0, i_clamp: 0}
+    lumi_joint5: {p: 200,  d: 0, i: 0, i_clamp: 0}
+    lumi_joint6: {p: 200,  d: 0, i: 0, i_clamp: 0}
+    lumi_joint7: {p: 200,  d: 0, i: 0, i_clamp: 0}
 
   constraints:
     goal_time: 0.5
@@ -31,14 +31,14 @@ trajectory_controller:
   action_monitor_rate: 30
   stop_trajectory_duration: 0.01
 
-#gripper_controller:
-#   type: effort_controllers/GripperActionController
-#   joint: lumi_finger_joint2
-#   goal_tolerance: 0.01
-#   stalled_velocity_threshold: 0.01
-#   stall_timeout: 0.2
-#   gains:
-#     lumi_finger_joint2: {p: 100,  d: 0, i: 0, i_clamp: 0}
+gripper_controller:
+   type: effort_controllers/GripperActionController
+   joint: lumi_finger_joint2
+   goal_tolerance: 0.01
+   stalled_velocity_threshold: 0.01
+   stall_timeout: 0.2
+   gains:
+     lumi_finger_joint2: {p: 100,  d: 0, i: 0, i_clamp: 0}
 
 #gripper_controller2:
 #  type: effort_controllers/GripperActionController
@@ -49,19 +49,19 @@ trajectory_controller:
 #  gains:
 #    lumi_finger_joint2: {p: 1,  d: 0, i: 0, i_clamp: 0}
 
-gripper_controller:
-  type: effort_controllers/JointTrajectoryController
-
-  joints:
-  - lumi_finger_joint1
-  - lumi_finger_joint2
-
-  gains:
-    lumi_finger_joint1: {p: 10,  d: 0, i: 0, i_clamp: 0}
-    lumi_finger_joint2: {p: 10,  d: 0, i: 0, i_clamp: 0}
-
-  constraints:
-    goal_time: 0.5
-  state_publish_rate:  25
-  action_monitor_rate: 30
-  stop_trajectory_duration: 0.01
+#gripper_controller:
+#  type: effort_controllers/JointTrajectoryController
+#
+#  joints:
+#  - lumi_finger_joint1
+#  - lumi_finger_joint2
+#
+#  gains:
+#    lumi_finger_joint1: {p: 10,  d: 0, i: 0, i_clamp: 0}
+#    lumi_finger_joint2: {p: 10,  d: 0, i: 0, i_clamp: 0}
+#
+#  constraints:
+#    goal_time: 0.5
+#  state_publish_rate:  25
+#  action_monitor_rate: 30
+#  stop_trajectory_duration: 0.01

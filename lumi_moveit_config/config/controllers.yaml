@@ -1,0 +1,21 @@
+controller_list:
+  - name: lumi_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - lumi_joint1
+      - lumi_joint2
+      - lumi_joint3
+      - lumi_joint4
+      - lumi_joint5
+      - lumi_joint6
+      - lumi_joint7
+  - name: lumi_hand_controller
+    action_ns: gripper_action
+    type: GripperCommand
+    default: true
+    parallel: true
+    joints:
+      - lumi_finger_joint1
+      - lumi_finger_joint2

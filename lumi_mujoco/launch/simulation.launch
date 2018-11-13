@@ -22,22 +22,15 @@ Created on: 11/13/18
         <node pkg="topic_tools" type="relay" name="relay_joint_state" args="joint_states /joint_states"/>
     </group>
 
-    <node name="panda_mujoco" type="mujoco_control" pkg="mujoco_ros_control" output="screen">
+    <node name="lumi_mujoco" type="mujoco_control" pkg="mujoco_ros_control" output="screen">
         <param name="model" value="$(arg model)"/>
-        <remap from="/lumi_mujoco/trajectory_controller/follow_joint_trajectory" to="/position_joint_trajectory_controller/follow_joint_trajectory"/>
-        <remap from="/lumi_mujoco/gripper_controller/gripper_cmd" to="/franka_gripper/gripper_action"/>
+        <remap from="/lumi_mujoco/trajectory_controller/follow_joint_trajectory" to="/lumi_arm_controller/follow_joint_trajectory"/>
+        <remap from="/lumi_mujoco/gripper_controller/gripper_cmd" to="/lumi_hand_controller/gripper_action"/>
     </node>
 
     <!--Load Move Group Interface -->
-    <include file="$(find panda_moveit_config)/launch/panda_moveit.launch">
-        <arg name="load_gripper" value="true"/>
-        <!--<arg name="rviz" value="$(arg rviz)"/>-->
+    <include file="$(find lumi_moveit_config)/launch/lumi_moveit.launch">
+        <arg name="rviz" value="$(arg rviz)"/>
     </include>
 
-    <include file="$(find panda_moveit_config)/launch/moveit_rviz.launch">
-        <arg name="config" value="true"/>
-        <arg name="debug" value="false"/>
-    </include>
-
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
 </launch>

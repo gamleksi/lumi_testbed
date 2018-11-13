@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<robot name="lumi">
+    <group name="lumi_arm">
+        <chain base_link="lumi_link0" tip_link="lumi_link8" />
+    </group>
+    <group name="lumi_hand">
+        <link name="lumi_hand" />
+        <link name="lumi_leftfinger" />
+        <link name="lumi_rightfinger" />
+        <joint name="lumi_finger_joint1" />
+        <passive_joint name="lumi_finger_joint2" />
+    </group>
+    <group name="all">
+        <group name="lumi_arm"/>
+        <group name="lumi_hand"/>
+    </group>
+
+    <group_state name="home" group="lumi_arm">
+        <joint name="lumi_joint1" value="0" />
+        <joint name="lumi_joint2" value="0" />
+        <joint name="lumi_joint3" value="0" />
+        <joint name="lumi_joint4" value="0" />
+        <joint name="lumi_joint5" value="0" />
+        <joint name="lumi_joint6" value="1.5982" />
+        <joint name="lumi_joint7" value="0" />
+    </group_state>
+    <group_state name="hand_close" group="lumi_hand">
+        <joint name="lumi_finger_joint1" value="0" />
+    </group_state>
+    <group_state name="hand_open" group="lumi_hand">
+        <joint name="lumi_finger_joint1" value="0.04" />
+    </group_state>
+
+    <end_effector name="lumi_hand" parent_link="lumi_hand" group="lumi_hand" parent_group="all" />
+
+    <disable_collisions link1="lumi_hand" link2="lumi_leftfinger" reason="Adjacent" />
+    <disable_collisions link1="lumi_hand" link2="lumi_link3" reason="Never" />
+    <disable_collisions link1="lumi_hand" link2="lumi_link4" reason="Never" />
+    <disable_collisions link1="lumi_hand" link2="lumi_link5" reason="Default" />
+    <disable_collisions link1="lumi_hand" link2="lumi_link6" reason="Never" />
+    <disable_collisions link1="lumi_hand" link2="lumi_link7" reason="Adjacent" />
+    <disable_collisions link1="lumi_hand" link2="lumi_rightfinger" reason="Adjacent" />
+    <disable_collisions link1="lumi_leftfinger" link2="lumi_link3" reason="Never" />
+    <disable_collisions link1="lumi_leftfinger" link2="lumi_link4" reason="Never" />
+    <disable_collisions link1="lumi_leftfinger" link2="lumi_link6" reason="Never" />
+    <disable_collisions link1="lumi_leftfinger" link2="lumi_link7" reason="Never" />
+    <disable_collisions link1="lumi_leftfinger" link2="lumi_rightfinger" reason="Default" />
+    <disable_collisions link1="lumi_link0" link2="lumi_link1" reason="Adjacent" />
+    <disable_collisions link1="lumi_link0" link2="lumi_link2" reason="Never" />
+    <disable_collisions link1="lumi_link0" link2="lumi_link3" reason="Never" />
+    <disable_collisions link1="lumi_link0" link2="lumi_link4" reason="Never" />
+    <disable_collisions link1="lumi_link1" link2="lumi_link2" reason="Adjacent" />
+    <disable_collisions link1="lumi_link1" link2="lumi_link3" reason="Never" />
+    <disable_collisions link1="lumi_link1" link2="lumi_link4" reason="Never" />
+    <disable_collisions link1="lumi_link2" link2="lumi_link3" reason="Adjacent" />
+    <disable_collisions link1="lumi_link2" link2="lumi_link4" reason="Never" />
+    <disable_collisions link1="lumi_link3" link2="lumi_link4" reason="Adjacent" />
+    <disable_collisions link1="lumi_link3" link2="lumi_link5" reason="Never" />
+    <disable_collisions link1="lumi_link3" link2="lumi_link6" reason="Never" />
+    <disable_collisions link1="lumi_link3" link2="lumi_link7" reason="Never" />
+    <disable_collisions link1="lumi_link3" link2="lumi_rightfinger" reason="Never" />
+    <disable_collisions link1="lumi_link4" link2="lumi_link5" reason="Adjacent" />
+    <disable_collisions link1="lumi_link4" link2="lumi_link6" reason="Never" />
+    <disable_collisions link1="lumi_link4" link2="lumi_link7" reason="Never" />
+    <disable_collisions link1="lumi_link4" link2="lumi_rightfinger" reason="Never" />
+    <disable_collisions link1="lumi_link5" link2="lumi_link6" reason="Adjacent" />
+    <disable_collisions link1="lumi_link5" link2="lumi_link7" reason="Default" />
+    <disable_collisions link1="lumi_link6" link2="lumi_link7" reason="Adjacent" />
+    <disable_collisions link1="lumi_link6" link2="lumi_rightfinger" reason="Never" />
+    <disable_collisions link1="lumi_link7" link2="lumi_rightfinger" reason="Never" />
+</robot>
