@@ -1,6 +1,9 @@
 <mujoco>
   <include file="robot_test.xml" />
    <visual>
+     <-- The new Kinect has color image resolution of 1920 x 1080 pixels and a fov of 84.1 x 53.8
+     resulting in an average of about 22 x 20 pixels per degree. --!>
+        <global fovy="53.8" offheight="320" />
         <rgba haze="0.15 0.25 0.35 1"/>
         <quality shadowsize="2048"/>
         <map stiffness="700" shadowscale="0.5" fogstart="10" fogend="15" zfar="40" haze="0.3"/>
@@ -20,11 +23,14 @@
     <worldbody>
         <light directional="true" diffuse=".4 .4 .4" specular="0.1 0.1 0.1" pos="0 0 5.0" dir="0 0 -1" castshadow="false"/>
         <light directional="true" diffuse=".6 .6 .6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1"/>
+
+        <body name="cup1" pos="0.2 0.24 0.0" >
+            <joint name="cup1"  type="free"/>
+            <geom type="mesh" contype="0" conaffinity="1" mesh="cup_design" />
+            <geom type="mesh" mesh="cup_design" material="matsponge" condim="1"/>
+        </body>
+
         <geom name="ground" type="plane" size="0 0 1" pos="0 0 -0.5" quat="1 0 0 0" material="matplane" condim="1"/>
 
-        <body name="cup" pos="0.3 0.24 0.0" >
-            <geom type="mesh" contype="0" conaffinity="1" group="1" mesh="cup_design" />
-            <geom type="mesh" mesh="cup_design" material="matsponge" group="1" condim="1"/>
-        </body>
     </worldbody>
 </mujoco>

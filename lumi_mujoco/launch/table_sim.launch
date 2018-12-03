@@ -2,9 +2,16 @@
 
     <arg name="rviz" default="true"/>
 
-    <arg name="model" default="$(find lumi_description)/robots/robot_test.urdf"/>
+    <arg name="urdf_model" default="$(find lumi_description)/robots/robot_test.urdf"/>
+    <arg name="xml_model" default="$(find lumi_description)/robots/robot_test_env.xml"/>
 
-    <param name="robot_description" textfile="$(arg model)"/>
+    <arg name="graspable" default="cup1"/>
+
+    <arg name="camera_x" default="0.44"/>
+    <arg name="camera_y" default="2.32"/>
+    <arg name="camera_z" default="-2.4"/>
+
+    <param name="robot_description" textfile="$(arg urdf_model)"/>
 
     <group ns="lumi_mujoco">
         <rosparam command="load" file="$(find lumi_mujoco)/config/controllers.yaml"/>
@@ -16,7 +23,11 @@
     </group>
 
     <node name="lumi_mujoco" type="mujoco_control" pkg="mujoco_ros_control" output="screen">
-        <param name="model" value="$(arg model)"/>
+        <param name="model" value="$(arg xml_model)"/>
+        <param name="camera_x" value="$(arg camera_x)"/>
+        <param name="camera_y" value="$(arg camera_y)"/>
+        <param name="camera_z" value="$(arg camera_z)"/>
+        <param name="graspable_name" value="$(arg graspable)"/>
         <remap from="/lumi_mujoco/trajectory_controller/follow_joint_trajectory" to="/lumi_arm_controller/follow_joint_trajectory"/>
         <remap from="/lumi_mujoco/gripper_controller/gripper_cmd" to="/lumi_hand_controller/gripper_action"/>
         <param name="lumi_joint4_init" value="-1.5708"/>
