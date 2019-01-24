@@ -3,7 +3,7 @@
    <visual>
      <!-- The new Kinect has color image resolution of 1920 x 1080 pixels and a fov of 84.1 x 53.8
      resulting in an average of about 22 x 20 pixels per degree. -->
-        <global fovy="53.8" offheight="240" offwidth="480" />
+        <global fovy="48.6" offheight="480" offwidth="640" />
         <rgba haze="0.15 0.25 0.35 1"/>
         <quality shadowsize="1"/>
         <map stiffness="700" shadowscale="0.5" fogstart="10" fogend="15" zfar="40" haze="0.3"/>
