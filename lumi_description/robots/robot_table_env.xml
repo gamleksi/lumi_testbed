@@ -3,20 +3,33 @@
    <visual>
      <!-- The new Kinect has color image resolution of 1920 x 1080 pixels and a fov of 84.1 x 53.8
      resulting in an average of about 22 x 20 pixels per degree. -->
-        <global fovy="53.8" offheight="160" offwidth="320" />
+        <global fovy="53.8" offheight="240" offwidth="480" />
         <rgba haze="0.15 0.25 0.35 1"/>
         <quality shadowsize="1"/>
         <map stiffness="700" shadowscale="0.5" fogstart="10" fogend="15" zfar="40" haze="0.3"/>
     </visual>
     <asset>
-        <mesh file="cup_design.stl" scale="0.05 0.05 0.05"/>
+
+        <mesh name="cup_design1" file="1cup_1.stl" scale="0.06 0.06 0.06"/>
+        <mesh name="cup_design2" file="2cup_1.stl" scale="0.05 0.05 0.05"/>
+        <mesh name="cup_design3" file="3cup_1.stl" scale="0.05 0.05 0.05"/>
+        <mesh name="cup_design4" file="4cup_1.stl" scale="0.04 0.04 0.04"/>
+        <mesh name="cup_design5" file="5cup_1.stl" scale="0.06 0.06 0.06"/>
+        <mesh name="cup_design6" file="6cup_1.stl" scale="0.04 0.04 0.04"/>
+        <mesh name="cup_design7" file="7cup_1.stl" scale="0.04 0.04 0.04"/>
+        <mesh name="cup_design8" file="8cup_1.stl" scale="0.04 0.04 0.04"/>
+        <mesh name="cup_design9" file="9cup_1.stl" scale="0.05 0.05 0.05"/>
+        <mesh name="cup_design10" file="10cup_1.stl" scale="0.06 0.06 0.06"/>
+
         <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="512"/>
         <texture name="texplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" width="512" height="512" mark="cross" markrgb=".8 .8 .8"/>
         <texture name="texcarpet" type="2d" file="textures/carpet.png"/>
         <texture name="texsponge" type="2d" file="textures/sponge.png"/>
         <texture name="texmarble" type="cube" file="textures/marble.png"/>
-        <material name="matplane" reflectance="0.3" texture="texplane" texrepeat="1 1" texuniform="true"/>
+        <material name="matplane" reflectance="0.0" texture="texplane" texrepeat="1 1" texuniform="true"/>
+        <material name="wallplane" reflectance="0.0" texture="texplane" texrepeat="0.3 0.3" texuniform="true"/>
         <material name="matmarble" texture="texmarble" rgba=".7 .7 .7 1"/>
+        <material name="wallmarble" texture="texmarble" rgba=".9 .0 .0 1"/>
         <material name="matcarpet" texture="texcarpet"/>
         <material name="matsponge" texture="texsponge" specular="0.3"/>
     </asset>
@@ -24,12 +37,57 @@
         <light directional="true" diffuse=".4 .4 .4" specular="0.1 0.1 0.1" pos="0 0 5.0" dir="0 0 -1" castshadow="false"/>
         <light directional="true" diffuse=".6 .6 .6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1"/>
 
-        <body name="cup1" pos="0.2 0.24 0.0">
+        <body name="cup1" pos="0.2 -10 0.0">
             <joint name="cup1"  type="free"/>
-            <geom type="mesh" contype="0" conaffinity="1" mesh="cup_design" />
-            <geom type="mesh" mesh="cup_design" material="matmarble" condim="1"/>
+            <geom type="mesh" mesh="cup_design1" material="matsponge" contype="0" conaffinity="1" condim="1"/>
         </body>
 
-        <geom name="ground" type="plane" size="0 0 1" pos="0 0 -0.5" quat="1 0 0 0" material="matplane" condim="1"/>
+        <body name="cup2" pos="0.3 -10 0.0">
+            <joint name="cup2"  type="free"/>
+            <geom type="mesh" mesh="cup_design2" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+        <body name="cup3" pos="0.35 -10 0.0">
+            <joint name="cup3"  type="free"/>
+            <geom type="mesh" mesh="cup_design3" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+        <body name="cup4" pos="0.4 -10 0.0">
+            <joint name="cup4"  type="free"/>
+            <geom type="mesh" mesh="cup_design4" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+        <body name="cup5" pos="0.6 -10 0.0">
+            <joint name="cup5"  type="free"/>
+            <geom type="mesh" mesh="cup_design5" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+        <body name="cup6" pos="0.7 -10 0.0">
+            <joint name="cup6"  type="free"/>
+            <geom type="mesh" mesh="cup_design6" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+        <body name="cup7" pos="0.8 -10 0.0">
+            <joint name="cup7"  type="free"/>
+            <geom type="mesh" mesh="cup_design7" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+        <body name="cup8" pos="0.9 -10 0.0">
+            <joint name="cup8"  type="free"/>
+            <geom type="mesh" mesh="cup_design8" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+        <body name="cup9" pos="0.10 -10 0.0">
+            <joint name="cup9"  type="free"/>
+            <geom type="mesh" mesh="cup_design9" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+        <body name="cup10" pos="0.11 -10 0.0">
+            <joint name="cup10"  type="free"/>
+            <geom type="mesh" mesh="cup_design10" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+        <geom name="ground" type="plane" size="0 0 1" pos="0 0 -0.4" quat="1 0 0 0" material="matplane" condim="1"/>
+        <geom name="wall1" type="plane" size="0 0 1" pos="0 1 0" quat="1 1 0 0" material="wallmarble" condim="1"/>
     </worldbody>
 </mujoco>
