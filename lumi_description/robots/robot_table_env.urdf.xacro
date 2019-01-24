@@ -13,14 +13,16 @@
             <geometry>
               <mesh scale="1 1 1" filename="package://lumi_description/meshes/table.stl"/>
             </geometry>
+            <origin xyz="0.4 -0.1 0" rpy="0 0 0" />
         </visual>
        <collision>
            <geometry>
                <mesh scale="1 1 1" filename="package://lumi_description/meshes/table.stl"/>
            </geometry>
+           <origin xyz="0.4 -0.1 0" rpy="0 0 0" />
        </collision>
     </link>
 
-    <xacro:panda_arm connected_to="base_link" arm_id="lumi" xyz="-0.4 0.15 0."/>
+    <xacro:panda_arm connected_to="base_link" arm_id="lumi" xyz="0 0 0"/>
     <xacro:hand ns="lumi" rpy="0 0 ${-pi/4}" connected_to="lumi_link8"/>
 </robot>

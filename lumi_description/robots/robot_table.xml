@@ -15,11 +15,11 @@
         <mesh name="finger" file="finger.stl" />
     </asset>
     <worldbody>
-        <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="table" />
-        <geom name="table" type="mesh" mesh="table" />
-        <geom pos="-0.4 0.15 0" type="mesh" contype="0" conaffinity="0" group="1" mesh="link0" />
-        <geom pos="-0.4 0.15 0" type="mesh" mesh="link0" />
-        <body name="lumi_link1" pos="-0.4 0.15 0.333">
+        <geom pos="0.4 -0.1 0" type="mesh" contype="0" conaffinity="0" group="1" mesh="table" />
+        <geom pos="0.4 -0.1 0" type="mesh" mesh="table" />
+        <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="link0" />
+        <geom type="mesh" mesh="link0" />
+        <body name="lumi_link1" pos="0 0 0.333">
             <inertial pos="1.1399e-05 -0.0312655 -0.0693733" quat="0.98466 0.174481 -0.000101815 0.000347662" mass="2.77281" diaginertia="0.0164224 0.0153969 0.00546286" />
             <joint name="lumi_joint1" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" />
             <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="link1" />
