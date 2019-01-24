@@ -25,4 +25,14 @@
 
     <xacro:panda_arm connected_to="base_link" arm_id="lumi" xyz="0 0 0"/>
     <xacro:hand ns="lumi" rpy="0 0 ${-pi/4}" connected_to="lumi_link8"/>
+
+    <!-- from master -->
+    <link name="lumi_ee"/>
+
+    <joint name="ee_fjoint" type="fixed">
+        <origin xyz="0 0 ${0.058 * 2}" rpy="0 0 0"/>
+        <parent link="lumi_hand"/>
+        <child link="lumi_ee"/>
+    </joint>
+
 </robot>

@@ -9,7 +9,7 @@
 
     <group ns="lumi_mujoco">
         <rosparam command="load" file="$(find lumi_mujoco)/config/controllers.yaml"/>
-        <arg name="controllers" default="joint_state_controller trajectory_controller gripper_controller"/>
+        <arg name="controllers" default="joint_state_controller trajectory_controller"/>
         <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
               args="$(arg controllers)"/>
 
@@ -28,12 +28,14 @@
         <param name="lumi_finger_joint2_init" value="0.02"/>
     </node>
 
-    <!-- <node name="lumi_gripper_action_forwarding" type="gripper_action_to_trajectory_action" pkg="lumi_mujoco"
+    <!--
+    <node name="lumi_gripper_action_forwarding" type="gripper_action_to_trajectory_action" pkg="lumi_mujoco"
           output="screen">
         <remap from="/lumi_gripper_action_forwarding/gripper_action" to="/lumi_hand_controller/gripper_action"/>
         <remap from="/lumi_gripper_action_forwarding/follow_joint_trajectory"
                to="/lumi_hand_controller/follow_joint_trajectory"/>
-    </node> -->
+    </node>
+    -->
 
     <!--Load Move Group Interface -->
     <include file="$(find lumi_moveit_config)/launch/lumi_moveit.launch">
