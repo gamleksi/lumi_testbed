@@ -13,6 +13,8 @@
 
     <depend>lumi_description</depend>
     <depend>mujoco_ros_control</depend>
-    <depend>aruco_msgs</depend>
+    <depend>control_msgs</depend>
+    <depend>roscpp</depend>
+    <depend>actionlib</depend>
 
 </package>

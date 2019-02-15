@@ -1,12 +1,15 @@
 <launch>
 
+
     <arg name="rviz" default="false"/>
 
     <!--- More info about the id: Openni launch file -->
     <arg name="kinect_id" default="#1" />
 
+    <arg name="rviz" default="true"/>
+
     <arg name="urdf_model" default="$(find lumi_description)/robots/robot_table_env.urdf"/>
-    <arg name="xml_model" default="$(find lumi_description)/robots/robot_table_env.xml"/>
+    <arg name="mujoco_model" default="$(find lumi_description)/robots/robot_table_env.xml"/>
 
     <param name="robot_description" textfile="$(arg urdf_model)"/>
 
@@ -20,7 +23,7 @@
     </group>
 
     <node name="lumi_mujoco" type="mujoco_control" pkg="mujoco_ros_control" output="screen">
-        <param name="model" value="$(arg xml_model)"/>
+        <param name="model" value="$(arg mujoco_model)"/>
         <remap from="/lumi_mujoco/trajectory_controller/follow_joint_trajectory"
                to="/lumi_arm_controller/follow_joint_trajectory"/>
         <remap from="/lumi_mujoco/trajectory_controller_fingers/follow_joint_trajectory"
@@ -31,14 +34,12 @@
         <param name="lumi_finger_joint2_init" value="0.02"/>
     </node>
 
-    <!--
     <node name="lumi_gripper_action_forwarding" type="gripper_action_to_trajectory_action" pkg="lumi_mujoco"
           output="screen">
         <remap from="/lumi_gripper_action_forwarding/gripper_action" to="/lumi_hand_controller/gripper_action"/>
         <remap from="/lumi_gripper_action_forwarding/follow_joint_trajectory"
                to="/lumi_hand_controller/follow_joint_trajectory"/>
     </node>
-    -->
 
     <!--Load Move Group Interface -->
     <include file="$(find lumi_moveit_config)/launch/lumi_moveit.launch">
