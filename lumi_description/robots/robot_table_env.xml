@@ -10,16 +10,39 @@
     </visual>
     <asset>
 
-        <mesh name="cup_design1" file="1cup_1.stl" scale="0.06 0.06 0.06"/>
-        <mesh name="cup_design2" file="2cup_1.stl" scale="0.05 0.05 0.05"/>
-        <mesh name="cup_design3" file="3cup_1.stl" scale="0.05 0.05 0.05"/>
+        <mesh name="cup_design1" file="1cup_1.stl" scale="0.033 0.033 0.033"/>
+        <mesh name="cup_design2" file="2cup_1.stl" scale="0.035 0.035 0.035"/>
+        <mesh name="cup_design3" file="3cup_1.stl" scale="0.035 0.035 0.035"/>
         <mesh name="cup_design4" file="4cup_1.stl" scale="0.04 0.04 0.04"/>
-        <mesh name="cup_design5" file="5cup_1.stl" scale="0.06 0.06 0.06"/>
-        <mesh name="cup_design6" file="6cup_1.stl" scale="0.04 0.04 0.04"/>
-        <mesh name="cup_design7" file="7cup_1.stl" scale="0.04 0.04 0.04"/>
-        <mesh name="cup_design8" file="8cup_1.stl" scale="0.04 0.04 0.04"/>
-        <mesh name="cup_design9" file="9cup_1.stl" scale="0.05 0.05 0.05"/>
-        <mesh name="cup_design10" file="10cup_1.stl" scale="0.06 0.06 0.06"/>
+        <mesh name="cup_design5" file="5cup_1.stl" scale="0.03 0.03 0.03"/>
+        <mesh name="cup_design6" file="6cup_1.stl" scale="0.033 0.033 0.033"/>
+        <mesh name="cup_design7" file="7cup_1.stl" scale="0.03 0.03 0.03"/>
+        <mesh name="cup_design8" file="8cup_1.stl" scale="0.03 0.03 0.03"/>
+        <mesh name="cup_design9" file="9cup_1.stl" scale="0.032 0.032 0.032"/>
+        <mesh name="cup_design10" file="10cup_1.stl" scale="0.03 0.03 0.03"/>
+
+        <mesh name="random1" file="003_cracker_box.stl" scale="1. 1. 1."/>
+        <mesh name="random2" file="004_sugar_box.stl" scale="1. 1. 1."/>
+        <mesh name="random3" file="006_mustard_bottle.stl" scale="1. 1. 1."/>
+        <mesh name="random4" file="008_pudding_box.stl" scale="1. 1. 1."/>
+        <mesh name="random5" file="009_gelatin_box.stl" scale="1. 1. 1."/>
+        <mesh name="random6" file="011_banana.stl" scale="1. 1. 1."/>
+        <mesh name="random7" file="012_strawberry.stl" scale="1. 1. 1."/>
+        <mesh name="random8" file="018_plum.stl" scale="1. 1. 1."/>
+        <mesh name="random9" file="072-c_toy_airplane.stl" scale="1. 1. 1."/>
+        <mesh name="random10" file="028_skillet_lid.stl" scale="1. 1. 1."/>
+        <mesh name="random11" file="033_spatula.stl" scale="1. 1. 1."/>
+        <mesh name="random12" file="035_power_drill.stl" scale="1. 1. 1."/>
+        <mesh name="random13" file="037_scissors.stl" scale="1. 1. 1."/>
+        <mesh name="random14" file="050_medium_clamp.stl" scale="1. 1. 1."/>
+        <mesh name="random15" file="055_baseball.stl" scale="1. 1. 1."/>
+
+        <!--
+        <mesh name="random16" file="070-a_colored_wood_blocks.stl" scale="0.03 0.03 0.03"/>
+        <mesh name="random17" file="072-c_toy_airplane.stl" scale="0.03 0.03 0.03"/>
+        <mesh name="random18" file="044_flat_screwdriver.stl" scale="0.03 0.03 0.03"/>
+        <mesh name="random19" file="042_adjustable_wrench.stl" scale="0.03 0.03 0.03"/>
+        -->
 
         <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="512"/>
         <texture name="texplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" width="512" height="512" mark="cross" markrgb=".8 .8 .8"/>
@@ -32,10 +55,82 @@
         <material name="wallmarble" texture="texmarble" rgba=".9 .0 .0 1"/>
         <material name="matcarpet" texture="texcarpet"/>
         <material name="matsponge" texture="texsponge" specular="0.3"/>
+
+<!--
+003_cracker_box.stl
+004_sugar_box.stl
+006_mustard_bottle.stl
+008_pudding_box.stl
+009_gelatin_box.stl
+011_banana.stl
+012_strawberry.stl
+013_apple.stl
+014_lemon.stl
+015_peach.stl
+016_pear.stl
+017_orange.stl
+018_plum.stl
+019_pitcher_base.stl
+021_bleach_cleanser.stl
+022_windex_bottle.stl
+026_sponge.stl
+028_skillet_lid.stl
+029_plate.stl
+030_fork.stl
+031_spoon.stl
+032_knife.stl
+033_spatula.stl
+035_power_drill.stl
+036_wood_block.stl
+037_scissors.stl
+038_padlock.stl
+040_large_marker.stl
+042_adjustable_wrench.stl
+043_phillips_screwdriver.stl
+044_flat_screwdriver.stl
+048_hammer.stl
+050_medium_clamp.stl
+051_large_clamp.stl
+052_extra_large_clamp.stl
+053_mini_soccer_ball.stl
+054_softball.stl
+055_baseball.stl
+056_tennis_ball.stl
+057_racquetball.stl
+058_golf_ball.stl
+059_chain.stl
+061_foam_brick.stl
+062_dice.stl
+063-a_marbles.stl
+063-b_marbles.stl
+070-a_colored_wood_blocks.stl
+070-b_colored_wood_blocks.stl
+071_nine_hole_peg_test.stl
+072-a_toy_airplane.stl
+072-b_toy_airplane.stl
+072-c_toy_airplane.stl
+072-d_toy_airplane.stl
+072-e_toy_airplane.stl
+073-a_lego_duplo.stl
+073-b_lego_duplo.stl
+073-c_lego_duplo.stl
+073-d_lego_duplo.stl
+073-e_lego_duplo.stl
+073-f_lego_duplo.stl
+073-g_lego_duplo.stl
+077_rubiks_cube.stl
+-->
+
     </asset>
     <worldbody>
         <light directional="true" diffuse=".4 .4 .4" specular="0.1 0.1 0.1" pos="0 0 5.0" dir="0 0 -1" castshadow="false"/>
         <light directional="true" diffuse=".6 .6 .6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1"/>
+
+        <!-- Box for debugging -->
+        <!-- <body name="box1" pos="0.4 0.0 0.0">
+            <joint name="box1"  type="free"/>
+            <geom type="box" size="0.01 0.01 0.01" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body> -->
 
         <body name="cup1" pos="0.2 -10 0.0">
             <joint name="cup1"  type="free"/>
@@ -87,7 +182,106 @@
             <geom type="mesh" mesh="cup_design10" material="matsponge" contype="0" conaffinity="1" condim="1"/>
         </body>
 
+        <body name="random1" pos="0.4 -20 0.0">
+            <joint name="random1"  type="free"/>
+            <geom type="mesh" mesh="random1" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+        <body name="random2" pos="0.11 -19 0.0">
+            <joint name="random2"  type="free"/>
+            <geom type="mesh" mesh="random2" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+        <body name="random3" pos="0.11 -16 0.0">
+            <joint name="random3"  type="free"/>
+            <geom type="mesh" mesh="random3" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+       <body name="random4" pos="0.11 -10 0.0">
+            <joint name="random4"  type="free"/>
+            <geom type="mesh" mesh="random4" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+       <body name="random5" pos="0.11 -15 0.0">
+            <joint name="random5"  type="free"/>
+            <geom type="mesh" mesh="random5" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+
+       <body name="random6" pos="0.11 -14 0.0">
+            <joint name="random6"  type="free"/>
+            <geom type="mesh" mesh="random6" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+       <body name="random7" pos="0.11 -14 0.0">
+            <joint name="random7"  type="free"/>
+            <geom type="mesh" mesh="random7" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+       <body name="random8" pos="0.11 -15 0.0">
+            <joint name="random8"  type="free"/>
+            <geom type="mesh" mesh="random8" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+       <body name="random9" pos="0.11 -13 0.0">
+            <joint name="random9"  type="free"/>
+            <geom type="mesh" mesh="random9" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+       <body name="random10" pos="0.11 -13 0.0">
+            <joint name="random10"  type="free"/>
+            <geom type="mesh" mesh="random10" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+       <body name="random11" pos="0.11 -14 0.0">
+            <joint name="random11"  type="free"/>
+            <geom type="mesh" mesh="random11" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+
+       <body name="random12" pos="0.11 -9 0.0">
+            <joint name="random12"  type="free"/>
+            <geom type="mesh" mesh="random12" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+       <body name="random13" pos="0.11 -8 0.0">
+            <joint name="random13"  type="free"/>
+            <geom type="mesh" mesh="random13" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+       <body name="random14" pos="0.11 -19 0.0">
+            <joint name="random14"  type="free"/>
+            <geom type="mesh" mesh="random14" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+       <body name="random15" pos="0.11 -14 0.0">
+            <joint name="random15"  type="free"/>
+            <geom type="mesh" mesh="random15" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+        <!--
+       <body name="random16" pos="0.11 -15 0.0">
+            <joint name="random16"  type="free"/>
+            <geom type="mesh" mesh="random16" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+       <body name="random17" pos="0.11 -15 0.0">
+            <joint name="random17"  type="free"/>
+            <geom type="mesh" mesh="random17" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+       <body name="random18" pos="0.11 -15 0.0">
+            <joint name="random18"  type="free"/>
+            <geom type="mesh" mesh="random18" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+
+        <body name="random19" pos="0.11 -15 0.0">
+            <joint name="random19"  type="free"/>
+            <geom type="mesh" mesh="random19" material="matsponge" contype="0" conaffinity="1" condim="1"/>
+        </body>
+        -->
+
         <geom name="ground" type="plane" size="0 0 1" pos="0 0 -0.4" quat="1 0 0 0" material="matplane" condim="1"/>
-        <geom name="wall1" type="plane" size="0 0 1" pos="0 1 0" quat="1 1 0 0" material="wallmarble" condim="1"/>
+        <!-- <geom name="wall1" type="plane" size="0 0 1" pos="0 1 0" quat="1 1 0 0" material="wallmarble" condim="1"/> -->
     </worldbody>
 </mujoco>

@@ -1,0 +1,54 @@
+<launch>
+
+    <arg name="rviz" default="false"/>
+
+    <!--- More info about the id: Openni launch file -->
+    <arg name="kinect_id" default="#1" />
+
+    <arg name="urdf_model" default="$(find lumi_description)/robots/robot_table_env.urdf"/>
+    <arg name="xml_model" default="$(find lumi_description)/robots/robot_table_env.xml"/>
+
+    <param name="robot_description" textfile="$(arg urdf_model)"/>
+
+    <group ns="lumi_mujoco">
+        <rosparam command="load" file="$(find lumi_mujoco)/config/controllers.yaml"/>
+        <arg name="controllers" default="joint_state_controller trajectory_controller"/>
+        <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+              args="$(arg controllers)"/>
+
+        <node pkg="topic_tools" type="relay" name="relay_joint_state" args="joint_states /joint_states"/>
+    </group>
+
+    <node name="lumi_mujoco" type="mujoco_control" pkg="mujoco_ros_control" output="screen">
+        <param name="model" value="$(arg xml_model)"/>
+        <remap from="/lumi_mujoco/trajectory_controller/follow_joint_trajectory"
+               to="/lumi_arm_controller/follow_joint_trajectory"/>
+        <remap from="/lumi_mujoco/trajectory_controller_fingers/follow_joint_trajectory"
+               to="/lumi_hand_controller/follow_joint_trajectory"/>
+        <param name="lumi_joint4_init" value="-1.5708"/>
+        <param name="lumi_joint6_init" value="1.5708"/>
+        <param name="lumi_finger_joint1_init" value="0.02"/>
+        <param name="lumi_finger_joint2_init" value="0.02"/>
+    </node>
+
+    <!--
+    <node name="lumi_gripper_action_forwarding" type="gripper_action_to_trajectory_action" pkg="lumi_mujoco"
+          output="screen">
+        <remap from="/lumi_gripper_action_forwarding/gripper_action" to="/lumi_hand_controller/gripper_action"/>
+        <remap from="/lumi_gripper_action_forwarding/follow_joint_trajectory"
+               to="/lumi_hand_controller/follow_joint_trajectory"/>
+    </node>
+    -->
+
+    <!--Load Move Group Interface -->
+    <include file="$(find lumi_moveit_config)/launch/lumi_moveit.launch">
+        <arg name="rviz" value="$(arg rviz)"/>
+    </include>
+
+    <!-- Inlcude Kinect and Aruco (camera pose estimate) -->
+    <include file="$(find aruco_ros)/launch/single.launch">
+        <arg name="device_id" value="$(arg kinect_id)"/>
+        <arg name="rviz" value="false"/>
+    </include>
+
+</launch>

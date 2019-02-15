@@ -13,5 +13,6 @@
 
     <depend>lumi_description</depend>
     <depend>mujoco_ros_control</depend>
+    <depend>aruco_msgs</depend>
 
 </package>
