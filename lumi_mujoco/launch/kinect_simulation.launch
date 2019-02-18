@@ -1,8 +1,5 @@
 <launch>
 
-
-    <arg name="rviz" default="false"/>
-
     <!--- More info about the id: Openni launch file -->
     <arg name="kinect_id" default="#1" />
 
