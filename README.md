@@ -15,12 +15,12 @@ Simulated robot with MuJoCo and MoveIt:
 roslaunch lumi_mujoco simulation.launch
 ```
 
-Simulation for training affordance policy with MuJoCo and MoveIt:
+A Simulation for affordance_gym with MuJoCo and MoveIt:
 ```sh
 roslaunch lumi_mujoco table_simulation.launch
 ```
 
-Simulation for affordance_gym with Kinect, MuJoCo and MoveIt:
+A Simulation for affordance_gym with Kinect, MuJoCo and MoveIt:
 ```sh
 roslaunch lumi_mujoco table_simulation.launch
 ```
